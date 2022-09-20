@@ -60,10 +60,10 @@ Berikut langkah-langkahnya:
 
 **Berikut kode lengkap dalam octave dan outputnya:**
 
-<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277173-416a64aa-8446-4050-ab57-0c7be16e3120.png" width=400 heigth=150></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277173-416a64aa-8446-4050-ab57-0c7be16e3120.png" width=600 heigth=350></p>
 
 <p align=justify>Figure(1) berisi citra gambar asli beserta histogramnya dan citra gambar merah beserta histogramnya:</p>
-<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277163-1f3ab9b3-67f5-480e-882c-64b9a5c3ff5b.png" width=400 heigth=150></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277163-1f3ab9b3-67f5-480e-882c-64b9a5c3ff5b.png" width=500 heigth=250></p>
 
 <p align=justify>Figure(2) berisi citra gambar hijau beserta histogramnya dan citra gambar biru beserta histogramnya:</p>
-<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277154-b8cc9695-6e24-4993-8ee2-1952ea0a45a9.png" width=400 heigth=150></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/191277154-b8cc9695-6e24-4993-8ee2-1952ea0a45a9.png" width=500 heigth=250></p>
