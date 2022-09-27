@@ -12,6 +12,8 @@
 
 <p align=justify>Jika continuous-tone berisi rentang warna atau abu-abu yang tak terbatas, proses halftoning mengurangi reproduksi visual menjadi gambar yang dicetak hanya dengan satu warna tinta, dalam titik dengan ukuran berbeda (modulasi lebar pulsa) atau spasi (modulasi frekuensi) atau keduanya. Reproduksi ini bergantung pada ilusi optik dasar: ketika titik halftone kecil, mata manusia menafsirkan area berpola seolah-olah itu adalah nada halus. Pada tingkat mikroskopis, film fotografi hitam-putih yang dikembangkan juga hanya terdiri dari dua warna, dan bukan rentang nada kontinu yang tak terbatas.</p>
 
+<p align=justify>Menurut saya, halftoning itu adalah suatu teknik untuk mengubah gambar menggunakan titik-titik yang bentuknya bervariasi dan jaraknya juga bervariasi, teknik ini hanya menggunakan satu warna yaitu hitam. Namun karena bentuk dan jaraknya bervariasi, hal ini membuat mata manusia melihat gambar tersebut menjadi seperti memiliki beberapa warna yang berbeda-beda.</p>
+
 <p align=center><img src="https://user-images.githubusercontent.com/112606990/192519922-08bb0891-bc49-40cc-9f2d-792dd20f574b.png"></p>
 
 Ada 2 teknik yang bisa digunakan untuk melakukan halftoning:
@@ -48,7 +50,4 @@ Contoh implementasi dari pattering dan dithering pada gambar yang sama:
 
 <p align=center><img src="https://user-images.githubusercontent.com/112606990/192532185-7a30a1fd-65b7-49d7-a0f5-35c45fe1b5a5.png"></p>
 
-<p align=justify></p>
-<p align=justify></p>
-<p align=justify></p>
-<p align=justify></p>
+<p align=justify>Menurut saya, setelah melihat dari perbedaan gambar diatas, teknik dithering lebih bagus hasil dibandingkan dengan teknik pattering. Karena teknik dithering membuat gambar dengan jumlah titik yang sama dengan jumlah piksel pada gambar aslinya. Sehingga gambar yang dihasilkan akan sama bentuknya walaupun setelah di halftoning. Sedangkan teknik pattering setiap sel halftone dibagi lagi menjadi kotak 4x4, jadi setiap nilai piksel input diwakili oleh jumlah kotak terisi yang berbeda dalam sel halftone. Karena kisi 4x4 hanya dapat mewakili 17 tingkat intensitas yang berbeda. Sehingga nantinya output dari teknik pattering akan lebih besar (zoom in) di bandingkan dengan gambar aslinya.</p>
