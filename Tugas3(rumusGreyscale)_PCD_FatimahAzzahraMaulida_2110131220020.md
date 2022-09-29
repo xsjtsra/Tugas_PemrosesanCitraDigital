@@ -8,6 +8,14 @@
 
 # **PENGAPLIKASIAN KETIGA RUMUS UNTUK MENGUBAH RGB MENJADI GREYSCALE**
 
+##### <p align=center>Gambar Asli</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/193018053-5eef6bb6-c508-4d1f-8929-408a28535ef7.png" width=300 heigth=300></p>
+
+##### <p align=center>Gambar asli diubah menjadi ukuran 32x32</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/193018353-37e56af8-49d4-4693-a90d-7287be13863f.png" width=300 heigth=300></p>
+
 ## **Lightness Method**
 
 ##### <p align=center>Rumus lighness method</p>
