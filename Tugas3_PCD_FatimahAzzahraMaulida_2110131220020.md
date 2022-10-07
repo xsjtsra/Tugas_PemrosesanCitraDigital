@@ -51,3 +51,29 @@ Contoh implementasi dari pattering dan dithering pada gambar yang sama:
 <p align=center><img src="https://user-images.githubusercontent.com/112606990/192532185-7a30a1fd-65b7-49d7-a0f5-35c45fe1b5a5.png"></p>
 
 <p align=justify>Menurut saya, setelah melihat dari perbedaan gambar diatas, teknik dithering lebih bagus hasil dibandingkan dengan teknik pattering. Karena teknik dithering membuat gambar dengan jumlah titik yang sama dengan jumlah piksel pada gambar aslinya. Sehingga gambar yang dihasilkan akan sama bentuknya walaupun setelah di halftoning. Sedangkan teknik pattering setiap sel halftone dibagi lagi menjadi kotak 4x4, jadi setiap nilai piksel input diwakili oleh jumlah kotak terisi yang berbeda dalam sel halftone. Karena kisi 4x4 hanya dapat mewakili 17 tingkat intensitas yang berbeda. Sehingga nantinya output dari teknik pattering akan lebih besar (zoom in) di bandingkan dengan gambar aslinya.</p>
+
+# <p align=center><b>ASAL USUL POLA PATTERNING</b></p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/192524874-b9986475-1b77-4bfa-9ccf-70ebfd517524.png"></p>
+
+<p align=justify>Pola pada gambar diatas adalah Rylander's recursive patterning matrices (Matriks pola rekursif Rylander) </p>
+
+### **Menerapkan Patterning Menggunakan Rylander's Matricies**
+
+- Take greyscale pixel values.
+- Ambil nilai piksel greyscale.
+- Kuantisasi piksel menjadi 17 level (bagi dengan 255/17 = 15).
+- Buat rentangnya di setiap pola
+  <p align=center><img src="https://user-images.githubusercontent.com/112606990/194553070-74c843ae-377f-4e13-bf8c-a98f05a3dede.png"></p>
+- Pilih array piksel dari tabel di atas untuk output
+gambar.
+
+# <p align=center><b>ASAL USUL MATRIKS THRESHOLD PADA DITHERING</b></p>
+
+<p align=justify>Thresholding digunakan untuk mengatur jumlah derajat keabuan yang ada pada citra. Dengan menggunakan thresholding maka derajat keabuan bisa diubah sesuai keinginan, misalkan diinginkan menggunakan derajat keabuan 16, maka tinggalmembagi nilai derajat keabuan dengan 16.</p>
+
+<p align=justify>Dari beberapa website yang saya baca, threshold dibuat sesuai dengan akan diterapkan pada permasalah apa. Jadi disesuaikan dengan apa yang ingin dilihat lebih jelas setelah di halftoning.</p>
+
+### <p align=center><b>MENGAPA POLA DITHER YANG UKURANNYA LEBIH KECIL TIDAK SEBAGUS POLA DITHER YANG UKURANNYA LEBIH LUAS</b></p>
+
+<p align=justify>Menurut saya, karena semakin besar ukurannya semakin banyak warna dalam pixel yang bisa dibentuk, sehingga semakin besar ukurannya semakin terlihat bagus dan jelas gambarnya.</p>
