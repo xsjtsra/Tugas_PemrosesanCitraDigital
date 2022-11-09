@@ -59,6 +59,150 @@ filter). Penapis lolos-tinggi akan meloloskan (atau memperkuat) komponen yang be
 
     Koreksi geometrik dilakukan pada citra yang memiliki gangguan yang terjadi pada waktu proses perekaman citra, misalnya pergeseran koordinat citra (translasi), perubahan ukuran citra, dan perubahan orientassi koordinat citra (skew). Proses koreksi geometri untuk meningkatkan kualitas citra tersebut disebut juha koreksi geometri. Koreksi geometri yang sederhana adalah dengan operasi geometri sederhana seperti rotasi, translasi, dan, penskalaan citra.
 
+Image enhancement memiliki dua pendekatan metode:
+
+### Spatial Domain Method
+
+<p align=justify>Nilai piksel dengan koordinat (x,y) pada citra F yang disempurnakan adalah
+hasil dari melakukan beberapa operasi pada piksel di sekitar
+(X, y) pada gambar masukan, F. Lingkungan dapat berbentuk apa saja, tetapi biasanya
+mereka persegi panjang.</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200951618-82e5abb2-6f9b-499a-bc85-166c2bd8f7fb.png"></p>
+
+<p align=justify>Pengolahan Citra dalam domain spasial dapat dinyatakan dengan: g (m, n) -T (f
+(M N)). Dimana f (m, n) adalah gambar input, g (m, n) adalah Gambar yang diproses
+dan T adalah operator yang mendefinisikan proses modifikasi. Operator -T, adalah
+biasanya fungsi bernilai tunggal dan monoton yang dapat beroperasi pada
+piksel individu atau pada nilai selektif dari input Gambar digunakan untuk
+menghitung nilai piksel yang datang untuk Gambar keluaran. Dalam
+gambar input digunakan untuk menghitung gambar yang dimodifikasi pada titik tertentu.
+Seseorang dapat mempertimbangkan pemrosesan titik sebagai kasus khusus pemrosesan wilayah
+di mana wilayah terdiri dari satu piksel. Pemrosesan poin
+operator juga dapat dinyatakan dengan: S-T(r), Dimana r dan s adalah variabel
+menyatakan tingkat intensitas flm, n) dan g(m ,n) pada sembarang titik (m ,n). Itu
+bagian berikut menjelaskan beberapa gambar berbasis titik dan wilayah
+teknik peningkatan. Artikel kedua juga akan membahas spasial
+smoothing, yang merupakan contoh lain dari pemrosesan gambar berbasis wilayah,
+dan bandingkan kelebihan dan kekurangannya dengan domain transformasi
+metode. Lingkungan terkecil yang mungkin berukuran 1 X 1. Dalam hal ini g
+hanya bergantung pada nilai lemak satu titik (x,y) dan T.</p>
+
+#### Basic Spatial Filtering
+
+<p align=justify>Proses penyaringan spasial terdiri dari hanya memindahkan topeng filter dari
+titik ke titik dalam gambar. Di setiap titik, respons filter dihitung
+menggunakan hubungan yang telah ditentukan. Di sini dua filter spasial menghaluskan -
+mean dan median dibahas. Tujuan dari pemfilteran gambar adalah untuk mengurangi derau impuls atau derau Gaussian
+menggunakan Filter Median dan Mean. Operasi pemfilteran median 2-D adalah
+dilakukan dengan menggeser jendela P x P ke seluruh gambar dan mengganti
+piksel tengah dengan median piksel di jendela itu.</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200951944-7827b036-31b6-4520-afa0-f40f11f10e86.png"></p>
+
+<p align=justify>Dimana: y(m,n), v(n,m) adalah gambar input dan gambar output W adalah</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200952009-211e109b-be83-4e9b-9646-69d937772149.png"></p>
+
+<p align=justify>Jelas, P harus bilangan bulat ganjil untuk menentukan piksel pusat. Itu
+nilai piksel berlapis disimpan dalam matriks lain, yang membentuk
+gambar yang diproses. Filter rata-rata bekerja dengan cara yang sama seperti di atas kecuali itu
+versi piksel tengah yang difilter adalah rata-rata jendela. Berarti dan
+filter median efektif untuk mengurangi berbagai jenis kebisingan.
+Eksperimen dengan detektor tepi Roberts dan Sobel menunjukkan bahwa kita
+perlu menggabungkan penyaringan lolos rendah (atau pemulusan) dengan turunan
+operator jika kita ingin menghasilkan peta tepi yang tidak mengandung noise
+tepi palsu. Efek dari penyaringan lolos rendah dalam domain spasial adalah untuk
+mengaburkan tepi tajam, dan karenanya meningkatkan ketidakpastian tentang
+lokasi tepi. Faktanya, ingatlah bahwa kami menggunakan penyaringan lolos tinggi
+technigue (unsharp masking) untuk meningkatkan kontras tepi. Dengan adanya
+Seringkali dalam desain filter yang optimal, deteksi tepi melibatkan dua hal:
+tujuan yang saling bertentangan: pembatalan kebisingan dan minimalisasi spasial
+menghaluskan.</p>
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200952094-8209ecac-33ea-4710-a1f4-804c05ddc40b.png"></p>
+
+### Frequency Domain Method
+
+<p align=justify>Teknik domain frekuensi didasarkan pada manipulasi
+transformasi ortogonal gambar daripada gambar itu sendiri. Freguency
+teknik domain cocok untuk memproses gambar sesuai dengan
+konten frekuensi. Prinsip di balik metode domain frekuensi
+peningkatan gambar terdiri dari komputasi transformasi kesatuan diskrit 2-D
+gambar, misalnya DFT 2-D, memanipulasi transformasi
+koefisien oleh operator M, dan kemudian melakukan transformasi terbalik.
+Transformasi ortogonal dari gambar memiliki dua komponen besar dan
+fase. Besarnya terdiri dari konten frekuensi gambar. Itu
+Fase ini digunakan untuk mengembalikan citra kembali ke domain spasial. Biasa
+transformasi ortogonal adalah transformasi kosinus diskrit, Fourier diskrit
+transform, Hartley Transform, dll. Domain transformasi memungkinkan operasi
+pada konten frekuensi gambar, dan oleh karena itu frekuensi tinggi
+konten seperti tepi dan informasi halus lainnya dapat dengan mudah ditingkatkan.</p>
+
+<p align=justify>Konsep penyaringan lebih mudah divisualisasikan dalam domain frekuensi.
+Oleh karena itu, peningkatan flx gambar, y) dapat dilakukan dalam frekuensi
+domain berbasis DFT. Hal ini sangat berguna dalam konvolusi jika
+luas spasial dari titik sebaran seguence h(x,y) besar maka konvolusi
+teori.</p>
+
+G(x,y) = h(x,y)*f(x,y)
+
+Where g(x, y) is enhanced image.
+
+There are three basic steps to freguency domain filtering:
+
+1. The image must be transformed from the spatial domain into the
+freguency domain using the Fast Fourier transform.
+
+2. The resulting complex image must be multiplied by a filter (that usually
+has only real values).
+
+3. The filtered image must be transformed back to the spatial domain.
+
+#### Jenis filter domain frekuensi
+
+1) Low Pass Filter
+
+Filter lolos rendah ada dalam berbagai bentuk, termasuk sirkuit elektronik
+(seperti filter desis yang digunakan dalam audio), filter anti-aliasing untuk pengkondisian
+sinyal sebelum konversi analog-ke-digital, filter digital untuk menghaluskan
+kumpulan data, penghalang akustik, pengaburan gambar, dan sebagainya. bergerak
+operasi rata-rata yang digunakan di bidang-bidang seperti keuangan adalah jenis
+lulus filter, dan dapat dianalisis dengan teknik pemrosesan sinyal yang sama
+seperti yang digunakan untuk filter low-pass lainnya. Filter low-pass memberikan hasil yang lebih halus
+bentuk sinyal, menghilangkan fluktuasi jangka pendek, dan meninggalkan
+tren jangka panjang. 
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200950822-b81e8a18-fcb6-4f71-94ce-fea6b968d1ab.png"></p>
+
+Di mana D0 adalah kuantitas non-negatif yang ditentukan, dan D (u,v) adalah jarak
+dari titik ke pusat persegi panjang frekuensi.
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200951017-9541109a-494e-4bda-b2df-5e4825f0abec.png"></p>
+
+2) High Pass Filter
+
+Pemfilteran lolos tinggi berarti kita menyaring frekuensi rendah dari
+sesuatu, dan biarkan pita frekuensi tinggi lewat. Dalam istilah gambar, ini
+berarti detail gambar disimpan, sedangkan gradien skala yang lebih besar
+dihapus. Untungnya, itu tidak serumit kedengarannya. Lulus tinggi yang ideal
+filter HPF didefinisikan sebagai:
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200951078-11eb991b-c9df-4b8e-8b6a-7aac5018cb8f.png"></p>
+
+Dimana D0 jarak potong diukur dari jarak dari titik asal
+dari persegi panjang frekuensi, dan D (u,v) adalah jarak dari titik asal
+Transformasi Fourier, u & v adalah variabel frekuensi dari transformasi Fourier.
+Filter ini adalah kebalikan dari filter lolos rendah Ideal yang memusatkan semua perhatian
+frekuensi di dalam lingkaran berjari-jari D, saat melewati tanpa redaman
+setiap freguency di luar lingkaran.
+
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/200951123-f4341dc6-7d8b-4a97-8aec-5bc8c8562e53.png"></p>
+
+<p align=justify></p>
+
+<p align=justify></p>
+
 <p align=justify></p>
 
 <p align=justify></p>
