@@ -86,13 +86,10 @@ Solusi untuk masalah ini adalah:
 
 ## <p align=center><b>Penerapan Konvolusi Pada Octave</b></p>
 
-<p align=justify></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/202181702-a390d4b6-1299-42dc-90fe-9e9c1998cafd.png"></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/202181791-a47c0761-4478-4dc2-829a-dd738b47a89c.png"></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/202181900-0ca79daf-9891-487a-9034-e352ce83d621.png"></p>
 
-<p align=justify></p>
+Output :
 
-<p align=justify></p>
-
-<p align=center><img src=""></p>
-<p align=center><img src=""></p>
-<p align=center><img src=""></p>
-<p align=center><img src=""></p>
+<p align=center><img src="https://user-images.githubusercontent.com/112606990/202182162-a5a90f6e-6450-4d28-ad72-32f687049dc7.png"></p>
